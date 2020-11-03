@@ -53,12 +53,12 @@ impl TestIsolate {
     }
 
     fn get_reject_no_handler_count(&self) -> u8 {
-        let state = self.0.get_slot::<Rc<RefCell<State>>>().unwrap().borrow_mut();
+        let state = self.0.get_slot::<Rc<RefCell<State>>>().unwrap().borrow();
         state.reject_no_handler_count
     }
 
     fn get_handler_after_reject_count(&self) -> u8 {
-        let state = self.0.get_slot::<Rc<RefCell<State>>>().unwrap().borrow_mut();
+        let state = self.0.get_slot::<Rc<RefCell<State>>>().unwrap().borrow();
         state.handler_after_reject_count
     }
 }
